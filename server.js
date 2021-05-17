@@ -18,7 +18,31 @@ function start() {
 			type: 'list',
 			message: 'What would you like to do?',
 			name: 'firstPrompt',
-			choices: []
+			choices: ['View', 'Add', 'Update', 'Exit']
 
 	})
+	.then((answer) => {
+		switch (answer.firstPrompt) {
+			case 'View':
+				break
+			case 'Add':
+				break
+			case 'Update':
+				break
+			case 'Exit':
+				connection.end()
+				break
+			default:
+         		console.log(`Invalid action: ${answer.action}`)
+        		break
+		}
+	}
 }
+
+
+
+
+
+
+
+start()
