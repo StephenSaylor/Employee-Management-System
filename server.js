@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
 	user: 'root',
 
 	password: 'FunkyMonkey68',
-	database: 'greatBayDB',
+	database: 'companyDB',
 })
 
 function start() {
@@ -39,7 +39,7 @@ function start() {
         		break
 		}
 	}
-}
+	)}
 
 
 
