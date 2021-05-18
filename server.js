@@ -41,10 +41,29 @@ function start() {
 	}
 	)}
 
-
-
-
-
+const addEmployee = () => {
+	const questions = [
+		{
+			type: "input",
+            message: "Please enter first name",
+            name: "firstName",
+            default: "Adam"
+        },
+        {
+            type: "input",
+            message: "Please enter last name",
+            name: "lastName",
+            default: "Anderson"
+        },
+        {
+            type: "list",
+            message: "Please enter company role",
+            name: "role",
+            choices: 
+        }
+    ]
+}
+	
 
 
 start()
