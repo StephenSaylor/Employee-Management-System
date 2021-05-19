@@ -4,7 +4,7 @@ const server = require('./server')
 const view = require('./view')
 const table = require('console.table')
 
-exports.updateRole = () => {
+exports.updateEmployee = () => {
     view.getAllEmployees(function (employeeResults) {
         console.log(employeeResults)
         const employees = []
