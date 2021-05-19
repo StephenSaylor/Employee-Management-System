@@ -52,11 +52,10 @@ exports.updateEmployee = () => {
                         choices: roles
                     }
                 ]).then((results) => {
-                    console.log('results...')
                     console.log(results.role)
                     connection.query('UPDATE employees SET emp_role_id = ? WHERE emp_id = ?',[results.role.id, answers.employee.id],function (err, results) {
                         if (err) throw err
-                        console.log('Successfully updated ' + answers.employee.id)
+                        console.log('Updated ' + answers.employee.id)
                         server.start()
                     })
                 })
