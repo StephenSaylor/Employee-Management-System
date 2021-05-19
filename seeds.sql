@@ -1,13 +1,12 @@
-
 INSERT INTO department (dept_name) 
 VALUES ('Front End'), ('Back End'), ('Management');
 
-INSERT INTO company_role (title, salary, dept_id) 
+INSERT INTO roles (title, salary, dept_id) 
 VALUES ('Head Manager', 90000.00, 3), 
 ('Head Chef', 50000.00, 2),
 ('Cook', 30000.00, 2),   
 ('Dishwasher', 20000.00, 2)             
-('Floor Manager', 50000.00, 1),
+('Floor Manager', 40000.00, 1),
 ('Server', 30000.00, 1),
 ('Hostess', 20000.00, 1);
 
