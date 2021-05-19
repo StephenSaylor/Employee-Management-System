@@ -46,5 +46,3 @@ const start = () => {
 		}
 	}
 	)}
-
-start()
