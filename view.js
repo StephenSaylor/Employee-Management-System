@@ -1,14 +1,6 @@
 const mysql = require('mysql')
-const server = require('../server')
+const server = require('./server')
 const table = require('console.table')
-
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'FunkyMonkey68',
-    database: 'companyDB'
-  });
 
 exports.viewEmployees = () => {
 	const viewString = 'SELECT e.emp_id, e.first_name, e.last_name, title, salary, dept_name, ' +
