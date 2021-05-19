@@ -4,6 +4,14 @@ const server = require('./server')
 const view = require('./view')
 const table = require('console.table')
 
+const connection = mysql.createConnection({
+	host: 'localhost',
+	port: 3306,
+	user: 'root',
+	password: 'FunkyMonkey68',
+	database: 'companyDB',
+})
+
 exports.updateEmployee = () => {
     view.getAllEmployees(function (employeeResults) {
         console.log(employeeResults)
@@ -53,7 +61,7 @@ exports.updateEmployee = () => {
                     }
                 ]).then((results) => {
                     console.log(results.role)
-                    connection.query('UPDATE employees SET emp_role_id = ? WHERE emp_id = ?',[results.role.id, answers.employee.id],function (err, results) {
+                    connection.query('UPDATE employees SET emp_role_id = ? WHERE emp_id = ?',[results.role.id, answers.employee.id], function (err, results) {
                         if (err) throw err
                         console.log('Updated ' + answers.employee.id)
                         server.start()
