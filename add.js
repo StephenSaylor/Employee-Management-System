@@ -1,15 +1,15 @@
-const inquirer = require("inquirer")
-const mysql = require("mysql")
-const server = require("../server")
-const view = require("./view")
+const inquirer = require('inquirer')
+const mysql = require('mysql')
+const server = require('../server')
+const view = require('./view')
 const table = require('console.table')
 
 const connection = mysql.createConnection({
-    host: "localhost",
+    host: 'localhost',
     port: 3306,
-    user: "root",
-    password: "FunkyMonkey68",
-    database: "companyDB"
+    user: 'root',
+    password: 'FunkyMonkey68',
+    database: 'companyDB'
 })
 
 exports.addEmployee = () => {
@@ -20,19 +20,19 @@ exports.addEmployee = () => {
 		}
 		const questions = [
 			{
-				type: "input",
-				message: "Please enter first name",
-				name: "firstName",
+				type: 'input',
+				message: 'Please enter first name',
+				name: 'firstName',
 			},
 			{
-				type: "input",
-				message: "Please enter last name",
-				name: "lastName",
+				type: 'input',
+				message: 'Please enter last name',
+				name: 'lastName',
 			},
 			{
-				type: "list",
-				message: "Please enter company role",
-				name: "role",
+				type: 'list',
+				message: 'Please enter company role',
+				name: 'role',
 				choices: roles
 			}
 		]
@@ -44,7 +44,7 @@ exports.addEmployee = () => {
                     roleId = rolesResults[i].role_id
                 }
             }
-            connection.query("INSERT INTO employees SET ?",
+            connection.query('INSERT INTO employees SET ?',
                 {
                     first_name: answers.firstName,
                     last_name: answers.lastName,
@@ -52,7 +52,7 @@ exports.addEmployee = () => {
                 },
             function(err,results) {
                 if(err) throw err
-                console.log("Successfully added " + answers.firstName + " " + answers.lastName )
+                console.log('Successfully added ' + answers.firstName + ' ' + answers.lastName )
                 server.start()
             })
         })

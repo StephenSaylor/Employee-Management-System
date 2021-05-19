@@ -1,9 +1,9 @@
 const inquirer = require('inquirer')
 const mysql = require('mysql')
 const table = require('console.table')
-const add = require("./add");
-const update = require("./update");
-const view = require("./view")
+const add = require('./add');
+const update = require('./update');
+const view = require('./view')
 
 const connection = mysql.createConnection({
 	host: 'localhost',
@@ -29,13 +29,13 @@ const start = () => {
 	.then((answer) => {
 		switch (answer.firstPrompt) {
 			case 'View':
-				viewEmployees()
+				view.viewEmployees()
 				break
 			case 'Add':
-				addEmployee()
+				add.addEmployee()
 				break
 			case 'Update':
-				updateEmployee()
+				update.updateEmployee()
 				break
 			case 'Exit':
 				connection.end()
